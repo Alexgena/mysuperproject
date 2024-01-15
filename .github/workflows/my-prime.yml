@@ -1,4 +1,4 @@
-name: My-actions
+name: Myactions
 env:
    APPLIC       : "My flask"
    Package_name : "Flask deploy ver ${{ github.sha}}"
