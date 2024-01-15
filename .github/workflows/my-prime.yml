@@ -1,4 +1,7 @@
 name: My-actions
+env:
+   APPLIC       : "My flask"
+   Package_name : "Flask deploy ver ${{ github.sha}}"
 on:
  push:
     branches:
@@ -11,10 +14,15 @@ jobs:
       steps:
       - name: Phint Hello message
         run: echo "Hello world from testing"
+      - name: execute few commads
+        run: |
+           echo "Hello"
+           echo "world"
+           echo "${{env.APPLIC}}"
    
    my_deploy:
       runs-on: ubuntu-latest
       needs: [my_testing]
       steps:
       - name: Phint Hello message
-        run: echo "Hello world from deploy"
+        run: echo "Hello world from deploy ver ${{env.Package_name}}"
