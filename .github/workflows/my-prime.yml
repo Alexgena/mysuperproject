@@ -36,8 +36,8 @@ jobs:
       - name: Phint Hello message
         run: |
            echo "Hello world from deploy ver ${{env.Package_name}}"
-           echo " variable1 = ${{var1}}"
-           echo " variable2 = ${{var2}}"
+           echo " variable1 = ${{env.var1}}"
+           echo " variable2 = ${{env.var2}}"
            echo " variable3 = $Local"
         env:
          Local: "Very super local variable"
