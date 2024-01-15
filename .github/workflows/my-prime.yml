@@ -1,0 +1,20 @@
+name: My-actions
+on:
+ push:
+    branches:
+       - main
+
+jobs:
+   my_testing:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Phint Hello message
+        run: echo "Hello world from testing"
+   
+   my_deploy:
+      runs-on: ubuntu-latest
+
+      steps:
+      - name: Phint Hello message
+        run: echo "Hello world from deploy"
