@@ -29,10 +29,19 @@ jobs:
    my_deploy:
       runs-on: ubuntu-latest
       needs: [my_testing]
+      env:
+         var1: "This is job deploy variable 1"
+         var2: "This is job deploy variable 2"
       steps:
       - name: Phint Hello message
-        run: echo "Hello world from deploy ver ${{env.Package_name}}"
-
+        run: |
+           echo "Hello world from deploy ver ${{env.Package_name}}"
+           echo " variable1 = ${{var1}}"
+           echo " variable2 = ${{var2}}"
+           echo " variable3 = $Local"
+        env:
+         Local: "Very super local variable"
+         
       - name: Can I'm use zip or python
         run: |
            zip --version
