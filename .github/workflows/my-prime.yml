@@ -21,7 +21,10 @@ jobs:
            echo "${{env.APPLIC}}"
       - name: files in my repo
         run: ls -la
-      
+      - name: clon my repo
+        uses: actions/checkout@v1
+      - name: files in my repo now
+        run: ls -la 
    
    my_deploy:
       runs-on: ubuntu-latest
