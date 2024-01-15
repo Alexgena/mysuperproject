@@ -32,3 +32,8 @@ jobs:
       steps:
       - name: Phint Hello message
         run: echo "Hello world from deploy ver ${{env.Package_name}}"
+
+      - name: Can I'm use zip or python
+        run: |
+           zip --version
+           python --version
